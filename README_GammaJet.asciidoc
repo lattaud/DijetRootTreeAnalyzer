@@ -1,17 +1,32 @@
 
+Instructions for producing Gamma + jet step 2 Analyse Nuples
+-----------------------------------
+
+##########################################################
+# *Target: CMS Gamma + Jet  - JEC calculation            #
+# *Author: Hugues                                        #
+# *Last update: 22 Sept 2018                              #
+#                                                        #
+# Lines starting with '$' are commands to be executed    #
+# (after necessary changes when needed), all other text  #
+# is just instructions or program output.                #
+########################################################## 
+
+Set up a working directory and do a local test run 
+
 
 ## Setup a fresh analysis directory
 
-[hlattaud@lxplus0023 thesearch]$ scram p -n dec16_CMSSW8011 CMSSW CMSSW_8_0_11
-[hlattaud@lxplus0023 thesearch]$ cd dec16_CMSSW8011
-[hlattaud@lxplus0023 src]$ git clone https://github.com/CMSDIJET/DijetRootTreeAnalyzer.git CMSDIJET/responsecomputing/DijetRootTreeAnalyzer
-[hlattaud@lxplus0023 DijetRootTreeAnalyzer]$ ./scripts/make_rootNtupleClass.sh -f yourBIgtupleRootfile.root -t dijets/events
+$ scram p -n dec16_CMSSW8011 CMSSW CMSSW_8_0_11
+$ cd dec16_CMSSW8011
+$ git clone https://github.com/CMSDIJET/DijetRootTreeAnalyzer.git CMSDIJET/responsecomputing/DijetRootTreeAnalyzer
+$ ./scripts/make_rootNtupleClass.sh -f yourBIgtupleRootfile.root -t dijets/events
 mv: overwrite `include/rootNtupleClass.h'? yes
 mv: overwrite `src/rootNtupleClass.C'? yes
-[hlattaud@lxplus0023 DijetRootTreeAnalyzer]$ ln -sf analysisClass_GammaplusJet_fakejethandle.C src/analysisClass.C
-[hlattaud@lxplus0023 DijetRootTreeAnalyzer]$ make clean
-[hlattaud@lxplus0023 DijetRootTreeAnalyzer]$ cmsenv
-[hlattaud@lxplus0023 DijetRootTreeAnalyzer]$ make
+$ ln -sf analysisClass_GammaplusJet_fakejethandle.C src/analysisClass.C
+$ make clean
+$ cmsenv
+$ make
 
 #create a list of your crab ouput file from the previous step : 
 

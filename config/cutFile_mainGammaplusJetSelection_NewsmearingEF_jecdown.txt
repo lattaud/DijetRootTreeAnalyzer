@@ -53,7 +53,7 @@ useJERs				0               -               -               -               -1
 # turn on/off L2L3res (value1 0: off, 1: on)
 useResidual				1               -               -               -               -1
 # turn on/off shift JECs (value1 0: off, 1: on, value2: sign of the shifting. The value is taken from a txt file with JEC uncertainties) 
-shiftJECs                       0               -1               -               -               -1		
+shiftJECs                       1               -1               -               -               -1		
 # turn on/off FastJet clustering of wide jets (0: off, 1: on)
 useFastJet			0		-		-		-		-1
 # clustering algorithm used for wide jets (CambridgeAachen, Kt, AntiKt)

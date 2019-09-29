@@ -1,5 +1,5 @@
 
 voms-proxy-init --voms cms --valid 100:00 -out /afs/cern.ch/user/h/hlattaud/.globus/gridproxy.cert
-condor_submit config_File=config/cutFile_mainGammaplusJetSelection_Newsmearing.txt output_name=TEST_condor name_list=test dir_list=2016_Legacy_NEWEG/BCD/ Njob=10 Submit_to_HTcondor.sub
+condor_submit config_File=config/cutFile_mainGammaplusJetSelection_Newsmearing.txt output_name=TEST_condor name_list=x dir_list=2016_Legacy_NEWEG/BCD/ Njob=10 Submit_to_HTcondor.sub
 
 condor_q

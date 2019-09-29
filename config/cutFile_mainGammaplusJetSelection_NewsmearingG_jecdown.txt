@@ -31,16 +31,16 @@ pt0Cut				15		-		-		-		-1
 pt1Cut				10		-		-		-		-1
 ptCut				15		-		-		-		-1
 firstJetThreshold        	0.3		-		-		-		-1
-L1MC                            data/Summer16_23Sep2016V6_MC/Summer16_23Sep2016V6_MC_L1FastJet_AK4PFchs.txt		-		-		-		-1
-L2MC                            data/Summer16_23Sep2016V6_MC/Summer16_23Sep2016V6_MC_L2Relative_AK4PFchs.txt		-		-		-		-1
-L3MC                            data/Summer16_23Sep2016V6_MC/Summer16_23Sep2016V6_MC_L3Absolute_AK4PFchs.txt		-		-		-		-1
-L1Dat                           data/Summer16_07Aug2017EF_V18_DATA/Summer16_07Aug2017EF_V18_DATA_L1FastJet_AK4PFchs.txt		-		-		-		-1
-L2Dat                           data/Summer16_07Aug2017EF_V18_DATA/Summer16_07Aug2017EF_V18_DATA_L2Relative_AK4PFchs.txt		-		-		-		-1
-L3Dat                           data/Summer16_07Aug2017EF_V18_DATA/Summer16_07Aug2017EF_V18_DATA_L3Absolute_AK4PFchs.txt		-		-		-		-1
-L2L3Dat                         data/Summer16_07Aug2017EF_V18_DATA/Summer16_07Aug2017EF_V18_DATA_L2L3Residual_AK4PFchs.txt		-		-		-		-1
-L1RCDat                          data/Summer16_07Aug2017EF_V18_DATA/Summer16_07Aug2017EF_V18_DATA_L1RC_AK4PFchs.txt		-		-		-		-1
-L1RCMC                        data/Summer16_23Sep2016V6_MC/Summer16_23Sep2016V6_MC_L1RC_AK4PFchs.txt		-		-		-		-1
-JECuncDat                       data/Summer16_07Aug2017EF_V18_DATA/Summer16_07Aug2017EF_V18_DATA_Uncertainty_AK4PFchs.txt		-		-		-		-1
+L1MC                            data/Summer16_03Feb2017_V1_MC/Summer16_03Feb2017_V1_MC_L1FastJet_AK4PFchs.txt		-		-		-		-1
+L2MC                            data/Summer16_03Feb2017_V1_MC/Summer16_03Feb2017_V1_MC_L2Relative_AK4PFchs.txt		-		-		-		-1
+L3MC                            data/Summer16_03Feb2017_V1_MC/Summer16_03Feb2017_V1_MC_L3Absolute_AK4PFchs.txt		-		-		-		-1
+L1Dat                           data/Summer16_07Aug2017GH_V18_DATA/Summer16_07Aug2017GH_V18_DATA_L1FastJet_AK4PFchs.txt		-		-		-		-1
+L2Dat                           data/Summer16_07Aug2017GH_V18_DATA/Summer16_07Aug2017GH_V18_DATA_L2Relative_AK4PFchs.txt		-		-		-		-1
+L3Dat                           data/Summer16_07Aug2017GH_V18_DATA/Summer16_07Aug2017GH_V18_DATA_L3Absolute_AK4PFchs.txt		-		-		-		-1
+L2L3Dat                         data/Summer16_07Aug2017GH_V18_DATA/Summer16_07Aug2017GH_V18_DATA_L2L3Residual_AK4PFchs.txt		-		-		-		-1
+L1RCDat                          data/Summer16_07Aug2017GH_V18_DATA/Summer16_07Aug2017GH_V18_DATA_L1RC_AK4PFchs.txt		-		-		-		-1
+L1RCMC                         data/Summer16_03Feb2017_V1_MC/Summer16_03Feb2017_V1_MC_L1RC_AK4PFchs.txt		-		-		-		-1
+JECuncDat                       data/Summer16_07Aug2017GH_V18_DATA/Summer16_07Aug2017GH_V18_DATA_Uncertainty_AK4PFchs.txt		-		-		-		-1
 JECuncMC                        data/Summer16_07Aug2017_V7_MC/Summer16_07Aug2017_V7_MC_Uncertainty_AK4PFchs.txt		-		-		-		-1
 JERreso                         data/JER_textfile/Spring16_25nsV6_MC/Spring16_25nsV6_MC_PtResolution_AK4PFchs.txt		-		-		-		-1
 JERSF                           data/JER_textfile/Spring16_25nsV6_MC/Spring16_25nsV6_MC_SF_AK4PFchs.txt		-		-		-		-1
@@ -53,7 +53,7 @@ useJERs				0               -               -               -               -1
 # turn on/off L2L3res (value1 0: off, 1: on)
 useResidual				1               -               -               -               -1
 # turn on/off shift JECs (value1 0: off, 1: on, value2: sign of the shifting. The value is taken from a txt file with JEC uncertainties) 
-shiftJECs                       0               -1               -               -               -1		
+shiftJECs                       1               -1               -               -               -1		
 # turn on/off FastJet clustering of wide jets (0: off, 1: on)
 useFastJet			0		-		-		-		-1
 # clustering algorithm used for wide jets (CambridgeAachen, Kt, AntiKt)
@@ -166,8 +166,8 @@ photonMult_j1        -inf	    +inf		-		-		1	100 0 100         SAVE
 jetPtAK4matchCaloJet_j1 -inf        +inf                 -	        -	        1	500 0 5000        SAVE
 jetJecAK4_j1            -inf        +inf                -               -               1       90  0 3           SAVE
 jetJecUncAK4_j1         -inf        +inf                -               -               1       90  0 3           SAVE
-jetCSVAK4_j1         -inf           +inf                -               -               1       100 0 1           SAVE
 jetQGDAK4_j1         -inf           +inf                -               -               1       100 0 1           SAVE
+jetCSVAK4_j1         -inf           +inf                -               -               1       100 0 1           SAVE
 pTAK4_j2	     -inf	    +inf		-	        -	        1	500 0 5000        SAVE
 etaAK4_j2            -inf           +inf                -               -               1       50  -2.5 2.5      SAVE
 phiAK4_j2  	     -inf           +inf                -               -               1       200 -3.15 3.15    SAVE
@@ -184,8 +184,8 @@ photonMult_j2        -inf	    +inf		-		-		1	100 0 100         SAVE
 jetPtAK4matchCaloJet_j2 -inf        +inf                 -	        -	        1	500 0 5000        SAVE
 jetJecAK4_j2            -inf        +inf                -               -               1       90  0 3           SAVE
 jetJecUncAK4_j2         -inf        +inf                -               -               1       90  0 3           SAVE
-jetCSVAK4_j2         -inf           +inf                -               -               1       100 0 1           SAVE
 jetQGDAK4_j2         -inf           +inf                -               -               1       100 0 1           SAVE
+jetCSVAK4_j2         -inf           +inf                -               -               1       100 0 1           SAVE
 pTAK4_j2GEN	     -inf	    +inf		-	        -	        1	500 0 5000        SAVE
 etaAK4_j2GEN          -inf           +inf                -               -               1       50  -2.5 2.5      SAVE
 PDGIDAK4_j2  	     -inf           +inf                -               -               1       200 0 30    SAVE

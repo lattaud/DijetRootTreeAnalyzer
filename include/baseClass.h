@@ -199,12 +199,14 @@ class baseClass : public rootNtupleClass {
 
   void fillSkimTree();
   void fillReducedSkimTree();
-
+  void fillpuTree();
   PileupReweighter pileupReweighter_;
 
   TFile * output_root_;
   std::vector<double> *pt_jets_, *phi_jets_, *eta_jets_, *mass_jets_, *emF_jets_; 
   std::vector<bool> *IsID_jets_;
+  Double_t genweight ;
+  Float_t trueInteractionall;
   
   TFile* EtaPhiCleaning_File;
   TH2D h_hotjets;
@@ -282,6 +284,7 @@ class baseClass : public rootNtupleClass {
   double getReducedSkimPreCutValue(const string& s);
   
   TTree *reduced_skim_tree_;
+  TTree *PUvariable;
   TH1I* hReducedCount_;
   bool writeReducedSkimTree();
 

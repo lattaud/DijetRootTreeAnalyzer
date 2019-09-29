@@ -13,7 +13,7 @@ config_file = args.config_file #path to the processed lumi JSON file
 outputname = args.outputname # which run
 listtorun = args.list
 dirlist = args.dirlist
-outputdir = "/eos/cms/store/group/phys_smp/hlattaud/Output_Batch/"#"/eos/user/h/hlattaud/GammaJet/2016/Output_lsfBatch/"
+outputdir = "/eos/user/h/hlattaud/GammaJet/2016/OutputCondorAnalysis/" #"/eos/cms/store/group/phys_smp/hlattaud/Output_Batch/"#"/eos/user/h/hlattaud/GammaJet/2016/Output_lsfBatch/" #
 cmd4="./main "+dirlist+listtorun+" "+config_file+" dijets/events "+outputdir+outputname+" "+outputdir+outputname
 cmd1="cd /afs/cern.ch/work/h/hlattaud/private/CMSSW_8_0_25/src/CMSDIJET/responsecomputing/DijetRootTreeAnalyzer/"
 cmd2="export SCRAM_ARCH=slc6_amd64_gcc530"

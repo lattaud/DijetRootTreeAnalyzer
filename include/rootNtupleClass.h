@@ -1,6 +1,6 @@
 //////////////////////////////////////////////////////////
 // This class has been automatically generated on
-// Fri May 18 13:59:29 2018 by ROOT version 6.06/09
+// Fri Jan 18 10:47:52 2019 by ROOT version 5.34/38
 // from TChain dijets/events/
 //////////////////////////////////////////////////////////
 
@@ -17,16 +17,11 @@ using namespace std;
 #include <TFile.h>
 
 // Header file for the classes stored in the TTree if any.
-#include "vector"
-#include "vector"
-#include "vector"
-#include "vector"
-#include "vector"
-
-class rootNtupleClass {
-public :
-   TTree          *fChain;   //!pointer to the analyzed TTree or TChain
-   Int_t           fCurrent; //!current Tree number in a TChain
+#include <vector>
+#include <vector>
+#include <vector>
+#include <vector>
+#include <vector>
 
 // Fixed size dimensions of array or collections stored in the TTree if any.
    const Int_t kMaxrun = 1;
@@ -72,6 +67,11 @@ public :
    const Int_t kMaxnGenJetsAK4 = 1;
    const Int_t kMaxnGenJetsAK8 = 1;
    const Int_t kMaxnGenPhotons = 1;
+
+class rootNtupleClass {
+public :
+   TTree          *fChain;   //!pointer to the analyzed TTree or TChain
+   Int_t           fCurrent; //!current Tree number in a TChain
 
    // Declaration of leaf types
    Int_t           runNo;
@@ -133,6 +133,7 @@ public :
    vector<bool>    *isMatch120;
    vector<bool>    *isMatch165;
    vector<bool>    *isGenMatch;
+   vector<bool>    *isPhotonMedium_EG_MVA;
    vector<float>   *PhotonLoosePt;
    vector<float>   *PhotonsmearPt;
    vector<float>   *PhotonSCPt;
@@ -168,6 +169,19 @@ public :
    vector<float>   *Photonfull5x5E2x5;
    vector<float>   *Photonfull5x5E1x3;
    vector<float>   *PhotonWorstChargedIsolation;
+   vector<float>   *Photon_scaleUNC_gainup;
+   vector<float>   *Photon_scaleUNC_gaindown;
+   vector<float>   *Photon_scaleUNC_systup;
+   vector<float>   *Photon_scaleUNC_systdown;
+   vector<float>   *Photon_scaleUNC_statup;
+   vector<float>   *Photon_scaleUNC_statdown;
+   vector<float>   *Photon_scaleUNC_ETup;
+   vector<float>   *Photon_scaleUNC_ETdown;
+   vector<float>   *Photon_smearUNC_phiup;
+   vector<float>   *Photon_smearUNC_rhodown;
+   vector<float>   *Photon_smearUNC_rhoup;
+   vector<float>   *photon_scale_central;
+   vector<float>   *photon_smear_central;
    vector<float>   *electronPt;
    vector<float>   *electronEta;
    vector<float>   *electronPhi;
@@ -306,6 +320,7 @@ public :
    TBranch        *b_isMatch120;   //!
    TBranch        *b_isMatch165;   //!
    TBranch        *b_isGenMatch;   //!
+   TBranch        *b_isPhotonMedium_EG_MVA;   //!
    TBranch        *b_PhotonLoosePt;   //!
    TBranch        *b_PhotonsmearPt;   //!
    TBranch        *b_PhotonSCPt;   //!
@@ -341,6 +356,19 @@ public :
    TBranch        *b_Photonfull5x5E2x5;   //!
    TBranch        *b_Photonfull5x5E1x3;   //!
    TBranch        *b_PhotonWorstChargedIsolation;   //!
+   TBranch        *b_Photon_scaleUNC_gainup;   //!
+   TBranch        *b_Photon_scaleUNC_gaindown;   //!
+   TBranch        *b_Photon_scaleUNC_systup;   //!
+   TBranch        *b_Photon_scaleUNC_systdown;   //!
+   TBranch        *b_Photon_scaleUNC_statup;   //!
+   TBranch        *b_Photon_scaleUNC_statdown;   //!
+   TBranch        *b_Photon_scaleUNC_ETup;   //!
+   TBranch        *b_Photon_scaleUNC_ETdown;   //!
+   TBranch        *b_Photon_smearUNC_phiup;   //!
+   TBranch        *b_Photon_smearUNC_rhodown;   //!
+   TBranch        *b_Photon_smearUNC_rhoup;   //!
+   TBranch        *b_photon_scale_central;   //!
+   TBranch        *b_photon_smear_central;   //!
    TBranch        *b_electronPt;   //!
    TBranch        *b_electronEta;   //!
    TBranch        *b_electronPhi;   //!
@@ -453,7 +481,7 @@ rootNtupleClass::rootNtupleClass(TTree *tree) : fChain(0)
       // The following code should be used if you want this class to access a chain
       // of trees.
       TChain * chain = new TChain("dijets/events","");
-      chain->Add("/eos/cms/store/group/phys_smp/hlattaud/Gjets_HF/QCD_Pt_170to300_TuneCUETP8M1_13TeV_pythia8/crab_QCD_Pt_170to300_ext_V6_MVA_deepCSV_lighttuple/180503_133027/0000/mylocaltest_Run2016B_10_10.root/dijets/events");
+      chain->Add("/eos/cms/store/group/phys_smp/hlattaud/Gjets_HF/GJet_Pt-15To6000_signalsample_NewEGSF_V1_G_B/GJet_Pt-15To6000_TuneCUETP8M1-Flat_13TeV_pythia8_20M/crab_GJet_Pt-15To6000_signalsample_NewEGSF_V1_G_B/190104_151405/0000/mylocaltest_Run2016B_10_21.root/dijets/events");
       tree = chain;
 #endif // SINGLE_TREE
 
@@ -520,6 +548,7 @@ void rootNtupleClass::Init(TTree *tree)
    isMatch120 = 0;
    isMatch165 = 0;
    isGenMatch = 0;
+   isPhotonMedium_EG_MVA = 0;
    PhotonLoosePt = 0;
    PhotonsmearPt = 0;
    PhotonSCPt = 0;
@@ -555,6 +584,19 @@ void rootNtupleClass::Init(TTree *tree)
    Photonfull5x5E2x5 = 0;
    Photonfull5x5E1x3 = 0;
    PhotonWorstChargedIsolation = 0;
+   Photon_scaleUNC_gainup = 0;
+   Photon_scaleUNC_gaindown = 0;
+   Photon_scaleUNC_systup = 0;
+   Photon_scaleUNC_systdown = 0;
+   Photon_scaleUNC_statup = 0;
+   Photon_scaleUNC_statdown = 0;
+   Photon_scaleUNC_ETup = 0;
+   Photon_scaleUNC_ETdown = 0;
+   Photon_smearUNC_phiup = 0;
+   Photon_smearUNC_rhodown = 0;
+   Photon_smearUNC_rhoup = 0;
+   photon_scale_central = 0;
+   photon_smear_central = 0;
    electronPt = 0;
    electronEta = 0;
    electronPhi = 0;
@@ -690,6 +732,7 @@ void rootNtupleClass::Init(TTree *tree)
    fChain->SetBranchAddress("isMatch120", &isMatch120, &b_isMatch120);
    fChain->SetBranchAddress("isMatch165", &isMatch165, &b_isMatch165);
    fChain->SetBranchAddress("isGenMatch", &isGenMatch, &b_isGenMatch);
+   fChain->SetBranchAddress("isPhotonMedium_EG_MVA", &isPhotonMedium_EG_MVA, &b_isPhotonMedium_EG_MVA);
    fChain->SetBranchAddress("PhotonLoosePt", &PhotonLoosePt, &b_PhotonLoosePt);
    fChain->SetBranchAddress("PhotonsmearPt", &PhotonsmearPt, &b_PhotonsmearPt);
    fChain->SetBranchAddress("PhotonSCPt", &PhotonSCPt, &b_PhotonSCPt);
@@ -725,6 +768,19 @@ void rootNtupleClass::Init(TTree *tree)
    fChain->SetBranchAddress("Photonfull5x5E2x5", &Photonfull5x5E2x5, &b_Photonfull5x5E2x5);
    fChain->SetBranchAddress("Photonfull5x5E1x3", &Photonfull5x5E1x3, &b_Photonfull5x5E1x3);
    fChain->SetBranchAddress("PhotonWorstChargedIsolation", &PhotonWorstChargedIsolation, &b_PhotonWorstChargedIsolation);
+   fChain->SetBranchAddress("Photon_scaleUNC_gainup", &Photon_scaleUNC_gainup, &b_Photon_scaleUNC_gainup);
+   fChain->SetBranchAddress("Photon_scaleUNC_gaindown", &Photon_scaleUNC_gaindown, &b_Photon_scaleUNC_gaindown);
+   fChain->SetBranchAddress("Photon_scaleUNC_systup", &Photon_scaleUNC_systup, &b_Photon_scaleUNC_systup);
+   fChain->SetBranchAddress("Photon_scaleUNC_systdown", &Photon_scaleUNC_systdown, &b_Photon_scaleUNC_systdown);
+   fChain->SetBranchAddress("Photon_scaleUNC_statup", &Photon_scaleUNC_statup, &b_Photon_scaleUNC_statup);
+   fChain->SetBranchAddress("Photon_scaleUNC_statdown", &Photon_scaleUNC_statdown, &b_Photon_scaleUNC_statdown);
+   fChain->SetBranchAddress("Photon_scaleUNC_ETup", &Photon_scaleUNC_ETup, &b_Photon_scaleUNC_ETup);
+   fChain->SetBranchAddress("Photon_scaleUNC_ETdown", &Photon_scaleUNC_ETdown, &b_Photon_scaleUNC_ETdown);
+   fChain->SetBranchAddress("Photon_smearUNC_phiup", &Photon_smearUNC_phiup, &b_Photon_smearUNC_phiup);
+   fChain->SetBranchAddress("Photon_smearUNC_rhodown", &Photon_smearUNC_rhodown, &b_Photon_smearUNC_rhodown);
+   fChain->SetBranchAddress("Photon_smearUNC_rhoup", &Photon_smearUNC_rhoup, &b_Photon_smearUNC_rhoup);
+   fChain->SetBranchAddress("photon_scale_central", &photon_scale_central, &b_photon_scale_central);
+   fChain->SetBranchAddress("photon_smear_central", &photon_smear_central, &b_photon_smear_central);
    fChain->SetBranchAddress("electronPt", &electronPt, &b_electronPt);
    fChain->SetBranchAddress("electronEta", &electronEta, &b_electronEta);
    fChain->SetBranchAddress("electronPhi", &electronPhi, &b_electronPhi);

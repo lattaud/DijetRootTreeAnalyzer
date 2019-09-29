@@ -31,17 +31,17 @@ pt0Cut				15		-		-		-		-1
 pt1Cut				10		-		-		-		-1
 ptCut				15		-		-		-		-1
 firstJetThreshold        	0.3		-		-		-		-1
-L1MC                            data/Summer16_23Sep2016V6_MC/Summer16_23Sep2016V6_MC_L1FastJet_AK4PFchs.txt		-		-		-		-1
-L2MC                            data/Summer16_23Sep2016V6_MC/Summer16_23Sep2016V6_MC_L2Relative_AK4PFchs.txt		-		-		-		-1
-L3MC                            data/Summer16_23Sep2016V6_MC/Summer16_23Sep2016V6_MC_L3Absolute_AK4PFchs.txt		-		-		-		-1
-L1Dat                           data/Summer16_07Aug2017EF_V18_DATA/Summer16_07Aug2017EF_V18_DATA_L1FastJet_AK4PFchs.txt		-		-		-		-1
-L2Dat                           data/Summer16_07Aug2017EF_V18_DATA/Summer16_07Aug2017EF_V18_DATA_L2Relative_AK4PFchs.txt		-		-		-		-1
-L3Dat                           data/Summer16_07Aug2017EF_V18_DATA/Summer16_07Aug2017EF_V18_DATA_L3Absolute_AK4PFchs.txt		-		-		-		-1
-L2L3Dat                         data/Summer16_07Aug2017EF_V18_DATA/Summer16_07Aug2017EF_V18_DATA_L2L3Residual_AK4PFchs.txt		-		-		-		-1
-L1RCDat                          data/Summer16_07Aug2017EF_V18_DATA/Summer16_07Aug2017EF_V18_DATA_L1RC_AK4PFchs.txt		-		-		-		-1
-L1RCMC                        data/Summer16_23Sep2016V6_MC/Summer16_23Sep2016V6_MC_L1RC_AK4PFchs.txt		-		-		-		-1
-JECuncDat                       data/Summer16_07Aug2017EF_V18_DATA/Summer16_07Aug2017EF_V18_DATA_Uncertainty_AK4PFchs.txt		-		-		-		-1
-JECuncMC                        data/Summer16_07Aug2017_V7_MC/Summer16_07Aug2017_V7_MC_Uncertainty_AK4PFchs.txt		-		-		-		-1
+L1MC                            data/Summer16_07Aug2017_V15_MC/Summer16_07Aug2017_V15_MC_L1FastJet_AK4PFchs.txt		-		-		-		-1
+L2MC                            data/Summer16_07Aug2017_V15_MC/Summer16_07Aug2017_V15_MC_L2Relative_AK4PFchs.txt		-		-		-		-1
+L3MC                            data/Summer16_07Aug2017_V15_MC/Summer16_07Aug2017_V15_MC_L3Absolute_AK4PFchs.txt		-		-		-		-1
+L1Dat                           data/Summer16_07Aug2017BCD_V18_DATA/Summer16_07Aug2017BCD_V18_DATA_L1FastJet_AK4PFchs.txt		-		-		-		-1
+L2Dat                           data/Summer16_07Aug2017BCD_V18_DATA/Summer16_07Aug2017BCD_V18_DATA_L2Relative_AK4PFchs.txt		-		-		-		-1
+L3Dat                           data/Summer16_07Aug2017BCD_V18_DATA/Summer16_07Aug2017BCD_V18_DATA_L3Absolute_AK4PFchs.txt		-		-		-		-1
+L2L3Dat                         data/Summer16_07Aug2017BCD_V18_DATA/Summer16_07Aug2017BCD_V18_DATA_L2L3Residual_AK4PFchs.txt		-		-		-		-1
+L1RCDat                         data/Summer16_07Aug2017BCD_V18_DATA/Summer16_07Aug2017BCD_V18_DATA_L1RC_AK4PFchs.txt		-		-		-		-1
+L1RCMC                          data/Summer16_07Aug2017_V15_MC/Summer16_07Aug2017_V15_MC_L1RC_AK4PFchs.txt		-		-		-		-1
+JECuncDat                       data/Summer16_07Aug2017BCD_V18_DATA/Summer16_07Aug2017BCD_V18_DATA_Uncertainty_AK4PFchs.txt		-		-		-		-1
+JECuncMC                        data/Summer16_07Aug2017_V15_MC/Summer16_07Aug2017_V15_MC_Uncertainty_AK4PFchs.txt		-		-		-		-1
 JERreso                         data/JER_textfile/Spring16_25nsV6_MC/Spring16_25nsV6_MC_PtResolution_AK4PFchs.txt		-		-		-		-1
 JERSF                           data/JER_textfile/Spring16_25nsV6_MC/Spring16_25nsV6_MC_SF_AK4PFchs.txt		-		-		-		-1
 # turn on/off on-the-fly JECs (value1 0: off, 1: on)
@@ -49,15 +49,16 @@ useJECs				1               -               -               -               -1
 # turn on/off the removal of JEC 
 noJECs                          0               -               -               -               -1
 # turn on/off on-the-fly JERs (value1 0: off, 1: on)
-useJERs				0               -               -               -               -1
+useJERs				1               -               -               -               -1
 # turn on/off L2L3res (value1 0: off, 1: on)
 useResidual				1               -               -               -               -1
 # turn on/off shift JECs (value1 0: off, 1: on, value2: sign of the shifting. The value is taken from a txt file with JEC uncertainties) 
-shiftJECs                       0               -1               -               -               -1		
+shiftJECs                       0               1               -               -               -1		
 # turn on/off FastJet clustering of wide jets (0: off, 1: on)
 useFastJet			0		-		-		-		-1
 # clustering algorithm used for wide jets (CambridgeAachen, Kt, AntiKt)
 jetAlgo				AntiKt 		-		-		-		-1
+#use EGamma uncertainties
 #
 #
 #--------------------------------- Cuts (level 0,1,2,3 ... n) below --------------------------------------------
@@ -77,7 +78,6 @@ jetAlgo				AntiKt 		-		-		-		-1
 #
 #VariableName	      minValue1(<) maxValue1(>=)	minValue2(<)	maxValue2(>=)	level	histoNbinsMinMax  OptionalFlag
 #------------	      ------------ -------------	------------	-------------	-----	----------------  ------------
-PassJSON              -1            1                   -               -               0       2 -0.5 1.5        SAVE  
 nVtx                  0             +inf                -               -               1       50  0 50	  SAVE
 IdTight_j1            0           1                 -               -               1       2  0 2	  	  SAVE
 IdTight_j2            0           1                 -               -               1       2  0 2	  	  SAVE
@@ -99,12 +99,7 @@ phomatchHLT_Photon75	     -inf           +inf                -	        -	       
 phomatchHLT_Photon90	     -inf           +inf                -	        -	        1       2  0 2.	  	  SAVE
 phomatchHLT_Photon120	     -inf           +inf                -	        -	        1       2  0 2.	  	  SAVE
 phomatchHLT_Photon165	     -inf           +inf                -	        -	        1       2  0 2.	  	  SAVE
-#prescaletrigger_Photon30      -inf          +inf                -               -               1       100  0 300     SAVE
-#prescaletrigger_Photon50      -inf          +inf                -               -               1       100  0 300     SAVE
-#prescaletrigger_Photon75      -inf          +inf                -               -               1       100  0 300     SAVE
-#prescaletrigger_Photon90      -inf          +inf                -               -               1       100  0 300     SAVE
-#prescaletrigger_Photon120      -inf          +inf                -               -               1       100  0 300     SAVE
-#prescaletrigger_Photon165      -inf          +inf                -               -               1       100  0 300     SAVE
+PassGenmatching              -inf           +inf   		-		-		1	2  0 2.  	  SAVE
 N_photon             -inf           +inf                -               -               1       500 0 10000       SAVE
 Pt_photon            -inf           +inf                -               -               1       500 0 10000       SAVE
 Eta_photon           -inf           +inf                -               -               1       500 0 10000       SAVE
@@ -120,32 +115,23 @@ Energy_photonGEN        -inf           +inf                -               -    
 hadTowOverEm          -inf           +inf                -               -               1       100 0 10000       SAVE
 sigmaietaieta_photon  -inf           +inf                -               -               1       100 0 10000       SAVE
 CHiso_photon          -inf           +inf                -               -               1       100 0 10000       SAVE
+Isfakephoton          -inf           +inf                -               -               1       100 0 10000       SAVE
 NHiso_photon          -inf           +inf                -               -               1       100 0 10000       SAVE
 Photoniso_photon      -inf           +inf                -               -               1       100 0 10000       SAVE
 Energy_photon        -inf           +inf                -               -               1       500 0 10000       SAVE
-Rbalancing           -inf           +inf                -               -               1       50 -4 4       SAVE
-RMPF                 -inf           +inf                -               -               1       50 -4 4       SAVE
-RMPFRAW                 -inf           +inf                -               -               1       50 -4 4       SAVE
-alpha                -inf           +inf                -               -               1       500 0 10000       SAVE
 deltaPHIgj           -inf           +inf                -               -               1       100 0 4       SAVE
 run		     -inf	    +inf		-		-		1	50  0 100000	  SAVE
 event		     -inf	    +inf		-		-		1	50  0 100000	  SAVE
 lumi		     -inf	    +inf		-		-		1	50  0 10000	  SAVE
 trueInteraction      -inf	    +inf		-		-		1	50  0 50	  SAVE
-#trueInteractionall    -inf	    +inf		-		-		1	50  0 50	  SAVE
 MET		     -inf           +inf                -               -               1       500 -5000 5000        SAVE
 MET_Eta		     -inf           +inf                -               -               1       500 -4 4        SAVE
 MET_Phi		     -inf           +inf                -               -               1       500 -4 4        SAVE
 MET_Pt		     -inf           +inf                -               -               1       500  0 5000        SAVE
-METRAW		     -inf           +inf                -               -               1       500 -5000 5000        SAVE
 METGEN		     -inf           +inf                -               -               1       500 -5000 5000        SAVE
 METGEN_Eta		     -inf           +inf                -               -               1       500 -4 4        SAVE
 METGEN_Phi		     -inf           +inf                -               -               1       500 -4 4        SAVE
 METGEN_Pt		     -inf           +inf                -               -               1       500  0 5000        SAVE
-metSig		     -inf           +inf                -               -               1       100 0 1           SAVE
-METoverHTAK4	     -inf	    +inf		-		-		1	1000 0 10000      SAVE
-HTAK4                -inf           +inf                -               -               1       500 0 10000       SAVE
-ptHat                -inf           +inf                -               -               1       500 0 10000       SAVE
 Nak4                 -inf           +inf                -               -               1       100 0 100         SAVE  
 pTAK4_j1	     -inf	    +inf		-	        -	        1	500 0 5000        SAVE
 pTAK4_j1GEN	     -inf	    +inf		-	        -	        1	500 0 5000        SAVE
@@ -165,6 +151,7 @@ neutrMult_j1         -inf	    +inf		-		-		1	100 0 100         SAVE
 photonMult_j1        -inf	    +inf		-		-		1	100 0 100         SAVE 
 jetPtAK4matchCaloJet_j1 -inf        +inf                 -	        -	        1	500 0 5000        SAVE
 jetJecAK4_j1            -inf        +inf                -               -               1       90  0 3           SAVE
+jetJerAK4_j1            -inf        +inf                -               -               1       90  0 3           SAVE
 jetJecUncAK4_j1         -inf        +inf                -               -               1       90  0 3           SAVE
 jetCSVAK4_j1         -inf           +inf                -               -               1       100 0 1           SAVE
 jetQGDAK4_j1         -inf           +inf                -               -               1       100 0 1           SAVE
@@ -183,6 +170,7 @@ neutrMult_j2         -inf	    +inf		-		-		1	100 0 100         SAVE
 photonMult_j2        -inf	    +inf		-		-		1	100 0 100         SAVE 
 jetPtAK4matchCaloJet_j2 -inf        +inf                 -	        -	        1	500 0 5000        SAVE
 jetJecAK4_j2            -inf        +inf                -               -               1       90  0 3           SAVE
+jetJerAK4_j2            -inf        +inf                -               -               1       90  0 3           SAVE
 jetJecUncAK4_j2         -inf        +inf                -               -               1       90  0 3           SAVE
 jetCSVAK4_j2         -inf           +inf                -               -               1       100 0 1           SAVE
 jetQGDAK4_j2         -inf           +inf                -               -               1       100 0 1           SAVE
@@ -211,4 +199,15 @@ deepcsv_probb_AK4_j2         -inf           +inf   		-		-		1	200 -1 1  	  SAVE
 deepcsv_probbb_AK4_j2         -inf           +inf   		-		-		1	200 -1 1  	  SAVE 
 deepcsv_probc_AK4_j2         -inf           +inf   		-		-		1	200 -1 1  	  SAVE 
 deepcsv_probcc_AK4_j2         -inf           +inf   		-		-		1	200 -1 1  	  SAVE 
-hadron_flavour_j2         -inf           +inf   		-		-		1	200 -1 1  	  SAVE 
+hadron_flavour_j2         -inf           +inf   		-		-		1	200 -1 1  	  SAVE  
+Pt_pho_Scale_gain_up         -inf           +inf   		-		-		1	200 -1 1  	  SAVE
+Pt_pho_Scale_gain_down         -inf           +inf   		-		-		1	200 -1 1  	  SAVE 
+Pt_pho_Scale_ET_up         -inf           +inf   		-		-		1	200 -1 1  	  SAVE
+Pt_pho_Scale_ET_down         -inf           +inf   		-		-		1	200 -1 1  	  SAVE 
+Pt_pho_Scale_syst_up         -inf           +inf   		-		-		1	200 -1 1  	  SAVE  
+Pt_pho_Scale_syst_down         -inf           +inf   		-		-		1	200 -1 1  	  SAVE   
+Pt_pho_Scale_stat_up         -inf           +inf   		-		-		1	200 -1 1  	  SAVE
+Pt_pho_Scale_stat_down         -inf           +inf   		-		-		1	200 -1 1  	  SAVE 
+Pt_pho_Smear_rho_up         -inf           +inf   		-		-		1	200 -1 1  	  SAVE
+Pt_pho_Smear_rho_down         -inf           +inf   		-		-		1	200 -1 1  	  SAVE 
+Pt_pho_Smear_phi_up         -inf           +inf   		-		-		1	200 -1 1  	  SAVE
