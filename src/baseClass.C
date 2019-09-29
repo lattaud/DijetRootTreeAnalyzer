@@ -109,6 +109,9 @@ void baseClass::init()
 
     reduced_skim_file_ = new TFile((*outputFileName_ + "_reduced_skim.root").c_str(),"RECREATE");
     reduced_skim_tree_= new TTree("tree","Reduced Skim");
+    PUvariable        = new TTree("puvariable","puvariable");
+    PUvariable->Branch("Generatorweight", &genweight, "genweight/D");
+    PUvariable->Branch("TrueInteractionall", &trueInteractionall, "trueInteractionall/F");
     hReducedCount_ = new TH1I("EventCounter","Event Counter",3,-0.5,2.5);
     hReducedCount_->GetXaxis()->SetBinLabel(1,"all events");
     hReducedCount_->GetXaxis()->SetBinLabel(2,"analyzed events");
@@ -121,16 +124,6 @@ void baseClass::init()
 	
       }
   }
-
-  //  for (map<string, cut>::iterator it = cutName_cut_.begin();
-  //   it != cutName_cut_.end(); it++) STDOUT("cutName_cut->first = "f<<it->first)
-  //  for (vector<string>::iterator it = orderedCutNames_.begin();
-  //       it != orderedCutNames_.end(); it++) STDOUT("orderedCutNames_ = "<<*it)
-  //STDOUT("ends");
-            /*pt_jets_    ->clear();
-            phi_jets_   ->clear();
-            eta_jets_   ->clear();
-            mass_jets_->clear();*/
             pt_jets_     = new std::vector<double>;
 	    phi_jets_    = new std::vector<double>;
 	    eta_jets_    = new std::vector<double>;
@@ -1566,6 +1559,16 @@ void baseClass::fillReducedSkimTree()
   return;
 }
 
+void baseClass::fillpuTree()
+{
+ 
+
+    PUvariable->Fill();
+
+
+  return;
+}
+
 bool baseClass::writeSkimTree()
 {
   bool ret = true;
@@ -1607,8 +1610,9 @@ bool baseClass::writeReducedSkimTree()
   bool ret = true;
 
   if(!produceReducedSkim_) return ret;
-
+  
   reduced_skim_file_->cd();
+  PUvariable->Write();
   reduced_skim_file_->mkdir("rootTupleTree");
   reduced_skim_file_->cd("rootTupleTree");
   reduced_skim_tree_->Write();

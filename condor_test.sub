@@ -1,0 +1,6 @@
+executable            = main
+arguments             =  --config_file $(config_File) --outputname $(output_name)_$(ProcId) --list $(name_list)$(ProcId) --dirlist $(dir_list)
+output                = /eos/cms/store/group/phys_jetmet/hlattaud/Output_batch/
+log                   = log/job.$(ClusterId).$(JobId).log
++JobFlavour            = "tomorrow"
+queue                  2
